@@ -15,3 +15,10 @@ INSERT INTO tb_product (name,description,price,img_url) VALUES ('Smart TV', 'Nul
 INSERT INTO tb_product (name,description,price,img_url) VALUES ('Macbook Pro', 'Nam eleifend maximus tortor, at mollis.', 1250.0, '');
 INSERT INTO tb_product (name,description,price,img_url) VALUES ('PC Gamer', 'Donec aliquet odio ac rhoncus cursus.', 1200.0, '');
 INSERT INTO tb_product (name,description,price,img_url) VALUES ('Rails for Dummies', 'Cras fringilla convallis sem vel faucibus.', 100.99, '');
+
+INSERT INTO tb_product_category (category_id, product_id) VALUES (2,1)
+INSERT INTO tb_product_category (category_id, product_id) VALUES (1,2)
+INSERT INTO tb_product_category (category_id, product_id) VALUES (3,2)
+INSERT INTO tb_product_category (category_id, product_id) VALUES (3,3)
+INSERT INTO tb_product_category (category_id, product_id) VALUES (3,4)
+INSERT INTO tb_product_category (category_id, product_id) VALUES (2,5)
