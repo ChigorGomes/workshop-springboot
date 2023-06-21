@@ -10,4 +10,8 @@ INSERT INTO tb_category (name) VALUES ('Electronics');
 INSERT INTO tb_category (name) VALUES ('Books');
 INSERT INTO tb_category (name) VALUES ('Computers');
 
-
+INSERT INTO tb_product (name,description,price,img_url) VALUES ('The Lord of the Rings', 'Lorem ipsum dolor sit amet, consectetur.', 90.5, '');
+INSERT INTO tb_product (name,description,price,img_url) VALUES ('Smart TV', 'Nulla eu imperdiet purus. Maecenas ante.', 2190.0, '');
+INSERT INTO tb_product (name,description,price,img_url) VALUES ('Macbook Pro', 'Nam eleifend maximus tortor, at mollis.', 1250.0, '');
+INSERT INTO tb_product (name,description,price,img_url) VALUES ('PC Gamer', 'Donec aliquet odio ac rhoncus cursus.', 1200.0, '');
+INSERT INTO tb_product (name,description,price,img_url) VALUES ('Rails for Dummies', 'Cras fringilla convallis sem vel faucibus.', 100.99, '');
