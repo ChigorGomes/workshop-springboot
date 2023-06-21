@@ -1,7 +1,11 @@
 package com.educandoweb.course.entities;
 
+import com.educandoweb.course.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,6 +17,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.aspectj.weaver.ast.Or;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -39,6 +44,21 @@ public class Order implements Serializable {
     @JoinColumn(name = "client_id")
     private User client;
 
+    private int orderStatus;
 
+    public Order(Long id, Instant moment, User client, OrderStatus orderStatus) {
+        this.id = id;
+        this.moment = moment;
+        this.client = client;
+        setOrderStatus(orderStatus);
+    }
 
+    public OrderStatus getOrderStatus() {
+        return OrderStatus.valueOf(orderStatus);
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        if (orderStatus != null)
+            this.orderStatus = orderStatus.getCode();
+    }
 }
