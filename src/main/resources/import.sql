@@ -4,3 +4,10 @@ INSERT INTO tb_user (name,email,phone,password) VALUES ('Alex Green', 'alex@gmai
 INSERT INTO tb_order (client_id,moment,order_status) VALUES (1,'2019-06-20T19:53:07Z',2);
 INSERT INTO tb_order (client_id,moment,order_status) VALUES (2,'2019-07-21T03:42:10Z',1);
 INSERT INTO tb_order (client_id,moment,order_status) VALUES (1,'2019-07-22T15:21:22Z',1);
+
+
+INSERT INTO tb_category (name) VALUES ('Electronics');
+INSERT INTO tb_category (name) VALUES ('Books');
+INSERT INTO tb_category (name) VALUES ('Computers');
+
+
