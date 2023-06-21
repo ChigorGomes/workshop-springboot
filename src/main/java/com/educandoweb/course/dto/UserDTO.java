@@ -1,5 +1,6 @@
 package com.educandoweb.course.dto;
 
+import com.educandoweb.course.entities.Order;
 import com.educandoweb.course.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
