@@ -1,6 +1,7 @@
 package com.educandoweb.course.dto;
 
 import com.educandoweb.course.entities.Order;
+import com.educandoweb.course.entities.OrderItem;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.enums.OrderStatus;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,12 +21,14 @@ public class OrderDTO {
     private Long id;
     private Instant moment;
     private OrderStatus orderStatus;
-    private User user;
+    private User client;
+    private Set<OrderItem> items;
 
     public OrderDTO(Order entity) {
         id = entity.getClient().getId();
-        user = entity.getClient();
         moment = entity.getMoment();
         orderStatus = entity.getOrderStatus();
+        client = entity.getClient();
+        items = entity.getItems();
     }
 }

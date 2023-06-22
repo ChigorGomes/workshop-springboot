@@ -22,3 +22,8 @@ INSERT INTO tb_product_category (category_id, product_id) VALUES (3,2)
 INSERT INTO tb_product_category (category_id, product_id) VALUES (3,3)
 INSERT INTO tb_product_category (category_id, product_id) VALUES (3,4)
 INSERT INTO tb_product_category (category_id, product_id) VALUES (2,5)
+
+INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1,1,2,90.5);
+INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1,3,1,1250.0);
+INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (2,3,2,1250.0);
+INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (3,5,2,100.99);
