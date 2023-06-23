@@ -27,3 +27,8 @@ INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1,1,2,
 INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1,3,1,1250.0);
 INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (2,3,2,1250.0);
 INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (3,5,2,100.99);
+
+
+INSERT INTO tb_payment (order_id,moment) VALUES (1,'2019-06-20T21:53:07Z');
+
+
