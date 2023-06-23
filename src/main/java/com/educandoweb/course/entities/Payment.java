@@ -1,6 +1,7 @@
 package com.educandoweb.course.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +17,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.Instant;
+
 @Entity
 @Table(name = "tb_payment")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -32,6 +34,7 @@ public class Payment implements Serializable {
     private Long id;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
+    @JsonIgnore
     @OneToOne //classe dependente
     @MapsId
     private Order order;

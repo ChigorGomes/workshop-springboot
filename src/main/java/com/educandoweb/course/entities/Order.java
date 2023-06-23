@@ -50,9 +50,9 @@ public class Order implements Serializable {
 
     @JsonIgnore
     @OneToMany(mappedBy = "id.order")
-    private Set<OrderItem> items =  new HashSet<>();
+    private Set<OrderItem> items = new HashSet<>();
 
-    @OneToOne(mappedBy = "order",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
 
     public Order(Long id, Instant moment, User client, OrderStatus orderStatus) {
@@ -69,5 +69,9 @@ public class Order implements Serializable {
     public void setOrderStatus(OrderStatus orderStatus) {
         if (orderStatus != null)
             this.orderStatus = orderStatus.getCode();
+    }
+
+    public Double getTotal() {
+        return items.stream().mapToDouble(OrderItem::getSubTotal).sum();
     }
 }

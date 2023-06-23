@@ -2,6 +2,7 @@ package com.educandoweb.course.dto;
 
 import com.educandoweb.course.entities.Order;
 import com.educandoweb.course.entities.OrderItem;
+import com.educandoweb.course.entities.Payment;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.enums.OrderStatus;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,8 @@ public class OrderDTO {
     private OrderStatus orderStatus;
     private User client;
     private Set<OrderItem> items;
+    private Payment payment;
+    private Double total;
 
     public OrderDTO(Order entity) {
         id = entity.getClient().getId();
@@ -30,5 +33,7 @@ public class OrderDTO {
         orderStatus = entity.getOrderStatus();
         client = entity.getClient();
         items = entity.getItems();
+        payment = entity.getPayment();
+        total = entity.getTotal();
     }
 }
