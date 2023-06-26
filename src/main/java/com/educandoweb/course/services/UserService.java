@@ -27,8 +27,13 @@ public class UserService {
     }
 
     @Transactional
-    public User insert(UserDTO userDTO){
-        User user =  new User(userDTO);
+    public User insert(UserDTO userDTO) {
+        User user = new User(userDTO);
         return userRepositories.save(user);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        userRepositories.deleteById(id);
     }
 }
