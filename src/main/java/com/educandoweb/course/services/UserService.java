@@ -36,4 +36,17 @@ public class UserService {
     public void delete(Long id) {
         userRepositories.deleteById(id);
     }
+
+    @Transactional
+    public User update(Long id, UserDTO userDTO) {
+        User entity = userRepositories.getReferenceById(id); //prepara o objeto monitorado para mexer e só depois efeturar uma operação no BD
+        updatData(entity, userDTO);
+        return userRepositories.save(entity);
+    }
+
+    private void updatData(User user, UserDTO userDTO) {
+        user.setName(userDTO.getName());
+        user.setEmail(userDTO.getEmail());
+        user.setPhone(userDTO.getPhone());
+    }
 }

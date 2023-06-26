@@ -1,7 +1,6 @@
 package com.educandoweb.course.controllers;
 
 import com.educandoweb.course.dto.ProductDTO;
-import com.educandoweb.course.dto.UserDTO;
 import com.educandoweb.course.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
