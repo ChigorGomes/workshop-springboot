@@ -1,5 +1,6 @@
 package com.educandoweb.course.entities;
 
+import com.educandoweb.course.dto.UserDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,8 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
@@ -45,5 +44,14 @@ public class User implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
+
+    public User(UserDTO entity) {
+        name = entity.getName();
+        email = entity.getEmail();
+        phone = entity.getPhone();
+        password = entity.getPassword();
+    }
+
+
 
 }

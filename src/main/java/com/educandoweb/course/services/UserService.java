@@ -25,4 +25,10 @@ public class UserService {
         User user = userRepositories.findById(userId).get();
         return new UserDTO(user);
     }
+
+    @Transactional
+    public User insert(UserDTO userDTO){
+        User user =  new User(userDTO);
+        return userRepositories.save(user);
+    }
 }
