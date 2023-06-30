@@ -3,6 +3,7 @@ package com.educandoweb.course.services;
 import com.educandoweb.course.dto.UserDTO;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.repositories.UserRepository;
+import com.educandoweb.course.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +23,7 @@ public class UserService {
 
     @Transactional(readOnly = true)
     public UserDTO findById(Long userId) {
-        User user = userRepositories.findById(userId).get();
+        User user = userRepositories.findById(userId).orElseThrow(()-> new ResourceNotFoundException(userId));
         return new UserDTO(user);
     }
 
